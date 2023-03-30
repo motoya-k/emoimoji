@@ -1,0 +1,61 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - 'plugin:react/recommended'
+  - airbnb
+  - 'plugin:jest/recommended'
+  - 'prettier'
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 12
+  sourceType: module
+plugins:
+  - react
+  - '@typescript-eslint'
+  - jest
+settings:
+  'import/resolver':
+    {
+      node:
+        {
+          paths: ['src', 'node_modules'],
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+    }
+rules:
+  {
+    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
+    'react/no-unescaped-entities': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'no-use-before-define': 'off',
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'import/no-extraneous-dependencies':
+      [
+        'error',
+        {
+          'devDependencies': ['**/*.test.ts*', src/components/**/*.stories.tsx],
+        },
+      ],
+    'import/prefer-default-export': 'off',
+    'import/extensions':
+      [
+        'error',
+        'ignorePackages',
+        { 'js': 'never', 'jsx': 'never', 'ts': 'never', 'tsx': 'never' },
+      ],
+    'max-classes-per-file': 'off',
+    'no-unused-vars': ['warn', { 'args': 'none' }],
+    'no-else-return': 'off',
+    'no-underscore-dangle': 'off',
+    'react/require-default-props': 'off',
+    'arrow-body-style': 'off',
+    'lines-between-class-members': 'off',
+    'no-param-reassign': 'off',
+    'prefer-destructuring': 'off',
+    'no-debugger': 'off',
+    'camelcase': 'off',
+  }

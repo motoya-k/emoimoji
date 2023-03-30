@@ -1,0 +1,17 @@
+{
+    "extends": "@tsconfig/recommended/tsconfig.json",
+    "compilerOptions": {
+        "lib": [
+            "esnext"
+        ],
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "declaration": true,
+        "noEmitOnError": true,
+        "allowSyntheticDefaultImports": true,
+        "strictBindCallApply": false,
+        "strictNullChecks": false
+    }
+}
